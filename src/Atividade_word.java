@@ -58,14 +58,14 @@ public class Atividade_word extends JFrame {
 		
 		
 		try {
-			String usa = JOptionPane.showInputDialog(null,"Digite o nome de usu醨io do seu computador: ");
+			String usa = JOptionPane.showInputDialog(null,"Digite o nome de usu谩rio do seu computador: ");
 			String caminho = "C:/Users/"+usa+"/Desktop";
-			String nome = "Ateninnha_Relat髍ios";
+			String nome = "Ateninnha_Relat贸rios";
 			File dir = new File(caminho + "/" + nome);
 			if (!dir.exists()) {
 				dir.mkdir();
 			}
-			nome_do_arquivo = dir+"/Relat髍io.txt";
+			nome_do_arquivo = dir+"/Relat贸rio.txt";
 			FileWriter out = new FileWriter(nome_do_arquivo);
 
 			table.getSelectedRows();
@@ -76,16 +76,16 @@ public class Atividade_word extends JFrame {
 				hora[linha] = table.getValueAt(linha,3).toString();
 				cod[linha] = table.getValueAt(linha,0).toString();
 				sts[linha] = table.getValueAt(linha,5).toString();
-				descri[linha] = "Professor: " + prof[linha]+ "\r\n   C骴igo: "+ cod[linha]+ "\r\n   Item/Sala: " + item[linha] + "\r\n   Quantidade: "+qtd[linha]+ "\r\n   Hor醨io: "+hora[linha]+"\r\n   Status: "+sts[linha];
+				descri[linha] = "Professor: " + prof[linha]+ "\r\n   C贸digo: "+ cod[linha]+ "\r\n   Item/Sala: " + item[linha] + "\r\n   Quantidade: "+qtd[linha]+ "\r\n   Hor谩rio: "+hora[linha]+"\r\n   Status: "+sts[linha];
 				apoio = apoio+descri[linha]+"\r\n";			
 			}
 			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
 			LocalDateTime now = LocalDateTime.now();
-			out.write("Relat髍io feito em: "+dtf.format(now)+"\r\n"+apoio);
+			out.write("Relat贸rio feito em: "+dtf.format(now)+"\r\n"+apoio);
 			out.close();
-			JOptionPane.showMessageDialog(null, "Relat髍io salvo em 'Ateninnha_Relat髍ios' na sua 羠ea de Trabalho.");
+			JOptionPane.showMessageDialog(null, "Relat贸rio salvo em 'Ateninnha_Relat贸rios' na sua 脕rea de Trabalho.");
 		} catch (IOException erro) {
-			JOptionPane.showMessageDialog(null, "Erro ao salvar relat髍io. " + erro.toString());
+			JOptionPane.showMessageDialog(null, "Erro ao salvar relat贸rio. " + erro.toString());
 		}
 	}
 }
